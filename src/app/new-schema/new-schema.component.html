@@ -1,0 +1,6 @@
+<form [formGroup]="jsonSchemaForm" (ngSubmit)="submit()">
+  <mat-form-field>
+    <textarea matInput placeholder="Schema json" formControlName="schema"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Add</button>
+</form>
