@@ -1,0 +1,24 @@
+<div class="wrapper" id="schemas-container">
+  <div class="list">
+    <mat-nav-list>
+      <h3 mat-subheader>Schemas</h3>
+      <div *ngIf="schemas.length === 0">
+        <app-list-item-loader [elementsToDisplay]="pageSize"></app-list-item-loader>
+      </div>
+      <mat-list-item *ngFor="let schema of schemas[0]">
+        <a [routerLink]="['/', schema]"> {{ schema }} </a>
+        <button mat-icon-button (click)="deleteSchema(schema)"  color="warn">
+          <mat-icon aria-label="Delete schema">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="handlePageEvent($event)">
+    </mat-paginator>
+  </div>
+  <div class="detail">
+    <router-outlet></router-outlet>
+  </div>
+</div>

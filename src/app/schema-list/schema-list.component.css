@@ -1,0 +1,19 @@
+.wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1px 1px;
+}
+
+.list {
+  display: block;
+}
+
+.detail {
+  display: block;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+}
