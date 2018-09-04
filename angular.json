@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "avro": {
+    "schema-registry-controller": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/avro",
+            "outputPath": "dist/schema-registry-controller",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "avro:build"
+            "browserTarget": "schema-registry-controller:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "avro:build:production"
+              "browserTarget": "schema-registry-controller:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "avro:build"
+            "browserTarget": "schema-registry-controller:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "avro-e2e": {
+    "schema-registry-controller-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,7 +103,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "avro:serve"
+            "devServerTarget": "schema-registry-controller:serve"
           }
         },
         "lint": {
@@ -118,5 +118,5 @@
       }
     }
   },
-  "defaultProject": "avro"
+  "defaultProject": "schema-registry-controller"
 }
