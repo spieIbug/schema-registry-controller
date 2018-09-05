@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule, MatInputModule, MatListModule, MatPaginatorModule, MatTableModule,
-  MatToolbarModule
+  MatToolbarModule, MatCardModule
 } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +17,8 @@ const MaterialModules = [
   MatListModule,
   MatPaginatorModule,
   MatInputModule,
-  MatIconModule
+  MatIconModule,
+  MatCardModule
 ];
 
 const AngularModules = [

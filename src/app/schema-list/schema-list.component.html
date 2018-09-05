@@ -1,31 +1,37 @@
 <div class="wrapper" id="schemas-container">
-  <div class="list">
-    <form id="search-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Schemas List</mat-card-title>
+      <mat-card-subtitle>Avro schemas</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form id="search-form">
 
-      <mat-form-field>
-        <input type="text" matInput placeholder="Search" [(ngModel)]="search" name="search" (input)="filter(search)" autocomplete="off">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Search" [(ngModel)]="search" name="search" (input)="filter(search)" autocomplete="off">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
 
-    </form>
-    <mat-nav-list>
-      <h3 mat-subheader>Schemas</h3>
-      <div *ngIf="schemas.length === 0">
-        <app-list-item-loader [elementsToDisplay]="pageSize"></app-list-item-loader>
-      </div>
-      <mat-list-item *ngFor="let schema of schemas[0]">
-        <a [routerLink]="['/', schema]"> {{ schema }} </a>
-        <button mat-icon-button (click)="deleteSchema(schema)"  color="warn">
-          <mat-icon aria-label="Delete schema">delete</mat-icon>
-        </button>
-      </mat-list-item>
-    </mat-nav-list>
-    <mat-paginator [length]="length"
-                   [pageSize]="pageSize"
-                   [pageSizeOptions]="pageSizeOptions"
-                   (page)="handlePageEvent($event)">
-    </mat-paginator>
-  </div>
+      </form>
+      <mat-nav-list>
+        <h3 mat-subheader>Schemas</h3>
+        <div *ngIf="schemas.length === 0">
+          <app-list-item-loader [elementsToDisplay]="pageSize"></app-list-item-loader>
+        </div>
+        <mat-list-item *ngFor="let schema of schemas[0]">
+          <a [routerLink]="['/', schema]"> {{ schema }} </a>
+          <button mat-icon-button (click)="deleteSchema(schema)"  color="warn">
+            <mat-icon aria-label="Delete schema">delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-paginator [length]="length"
+                     [pageSize]="pageSize"
+                     [pageSizeOptions]="pageSizeOptions"
+                     (page)="handlePageEvent($event)">
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
   <div class="detail">
     <router-outlet></router-outlet>
   </div>

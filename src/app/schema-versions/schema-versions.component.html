@@ -1,14 +1,23 @@
-<mat-nav-list>
-  <h3 mat-subheader>Versions</h3>
-  <mat-list-item><a mat-raised-button color="primary" [routerLink]="['new']">+ New version</a></mat-list-item>
-  <div *ngIf="schemaVersions.length === 0">
-    <app-list-item-loader [elementsToDisplay]="1"></app-list-item-loader>
-  </div>
-  <mat-list-item *ngFor="let version of schemaVersions">
-    <a [routerLink]="[version]" class="version-link" color="primary"> version {{ version }} </a>
-    <button mat-icon-button (click)="deleteVersion(version)"  color="warn">
-      <mat-icon aria-label="Delete schema">delete</mat-icon>
-    </button>
-  </mat-list-item>
-</mat-nav-list>
-<router-outlet></router-outlet>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Schemas Details</mat-card-title>
+    <mat-card-subtitle>Avro schemas version / details</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-nav-list>
+      <h3 mat-subheader>Versions</h3>
+      <mat-list-item><a mat-raised-button color="primary" [routerLink]="['new']">+ New version</a></mat-list-item>
+      <div *ngIf="schemaVersions.length === 0">
+        <app-list-item-loader [elementsToDisplay]="1"></app-list-item-loader>
+      </div>
+      <mat-list-item *ngFor="let version of schemaVersions">
+        <a [routerLink]="[version]" class="version-link" color="primary"> version {{ version }} </a>
+        <button mat-icon-button (click)="deleteVersion(version)"  color="warn">
+          <mat-icon aria-label="Delete schema">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>
+

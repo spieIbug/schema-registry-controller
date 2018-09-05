@@ -5,8 +5,8 @@
   grid-gap: 1px 1px;
 }
 
-.list {
-  display: block;
+mat-card {
+  margin: 10px;
 }
 
 .detail {

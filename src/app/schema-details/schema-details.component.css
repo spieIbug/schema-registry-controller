@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+pre {
+  overflow-y: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
