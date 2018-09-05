@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SchemaService } from '../schema.service';
 import { PageEvent } from '@angular/material';
-import { chunk } from 'lodash';
+import { chunk, filter, toLower } from 'lodash';
 
 @Component({
   selector: 'app-schema-list',
@@ -10,6 +10,7 @@ import { chunk } from 'lodash';
 })
 export class SchemaListComponent implements OnInit {
   schemas: string[][] = [];
+  search: string;
 
   length = 0;
   pageSize = 10;
@@ -39,5 +40,14 @@ export class SchemaListComponent implements OnInit {
   handlePageEvent($event: PageEvent) {
     this.pageSize = $event.pageSize;
     this.schemas = chunk(this.allSchemas, this.pageSize);
+  }
+
+  filter(search: string) {
+    if (!search) {
+      this.schemas = chunk(this.allSchemas, this.pageSize);
+    }
+    const filtre = filter(this.allSchemas, value => toLower(value).includes(toLower(search)));
+    this.length = filtre.length;
+    this.schemas = chunk(filtre, this.pageSize);
   }
 }
