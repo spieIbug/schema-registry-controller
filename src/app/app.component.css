@@ -1,4 +1,15 @@
-:host{
+:host {
   display: block;
 }
 
+app-root {
+  height: 57rem;
+}
+
+mat-sidenav-container {
+  height: 53rem;
+}
+
+mat-sidenav {
+  width: 15rem;
+}

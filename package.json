@@ -27,7 +27,8 @@
     "loadash": "^1.0.0",
     "rxjs": "^6.0.0",
     "ts-typed": "^1.2.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "ngx-json-viewer": "^2.3.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.0",

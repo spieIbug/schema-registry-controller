@@ -1,6 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
-  <a routerLink="/" mat-button>SCHEMA REGISTRY UI</a>
+  <mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sideNav.toggle()">
+      <mat-icon aria-label="toggle menu">menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
 </mat-toolbar>
-<router-outlet>
-</router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sideNav mode="push" role="navigation">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/"><mat-icon aria-label="toggle menu">home</mat-icon> Home</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
