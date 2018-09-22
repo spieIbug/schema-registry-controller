@@ -9,7 +9,6 @@ import { SchemaService } from './schema.service';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { SchemaVersionsComponent } from './schema-versions/schema-versions.component';
 import { SchemaDetailsComponent } from './schema-details/schema-details.component';
-import { NewSchemaComponent } from './new-schema/new-schema.component';
 
 export const routingConfiguration: ExtraOptions = {
   paramsInheritanceStrategy: 'always'
@@ -25,10 +24,6 @@ const routes: Routes = [
         component: SchemaVersionsComponent,
         children: [
           {
-            path: 'new',
-            component: NewSchemaComponent
-          },
-          {
             path: ':version',
             component: SchemaDetailsComponent
           }
@@ -43,8 +38,7 @@ const routes: Routes = [
     AppComponent,
     SchemaListComponent,
     SchemaVersionsComponent,
-    SchemaDetailsComponent,
-    NewSchemaComponent
+    SchemaDetailsComponent
   ],
   imports: [
     BrowserModule,
