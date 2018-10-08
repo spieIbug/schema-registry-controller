@@ -1,0 +1,8 @@
+version: '3.6'
+
+services:
+    schema-registry-gui:
+        image: 'schema-registry-gui:0.0.1'
+        build: '.'
+        ports:
+            - 3000:80
